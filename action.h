@@ -22,35 +22,24 @@
 
 /* Kamus umum */
 #define MaxAksi 20
-
+#define String(W)  (W).str
 /* Definisi elemen dan koleksi objek */
 typedef struct { 
   char str[30]; /* String */
-  char aksivalid[MaxAksi][50] = { //Indeks aksi dimulai dari 1 yaitu tidur siang
-    "","Tidur Siang", "Tidur Malam", //tidur siang + 10 energy, tidur malam + 15 energy 
-    "Makan Hamburger", "Makan Pizza", "Makan Steak and Beans", //hamburger +5 energy, pizza +10 energy, steak +15 energy
-    "Minum Air", "Minum Kopi", "Minum Jus", //air -5 hygiene, kopi +5 energy -10 hygiene, jus +10 energy -5 hygiene
-    "Buang Air Kecil", "Buang Air Besar" //BAK +5 hygiene, BAB +10 hygiene -5 energy
-    "Bersosialisasi ke Kafe", //+15 fun -10 energy -5 hygiene
-    "Bermain Medsos", //+10 fun -10 energy
-    "Bermain Media Sosial", //+10 fun -10 energy
-    "Bermain Komputer", //+15 fun -10 energy
-    "Mandi", //+15 hygiene -5 energy
-    "Cuci Tangan", //+5 hygiene
-    "Mendengarkan Musik di Radio", //+10 fun -5 energy
-    "Membaca Koran", "Membaca Novel" //Koran +5 fun -5 energy, Novel +10 fun -5 energy
-    };
 } Word;
 
 /* *** KONSTRUKTOR *** */
+char AssignAksiValid();
+/* Mengassign array of string aksi valid */
+
 void BacaAksi(Word *X);
 /* Membaca input aksi dari user dan memasukannya ke Str.Word */
 
 /* Operator True/false */
-boolean IsAksiValid(Word X);
+int IdxAksiValid(Word X,char c[MaxAksi][50]);
 /* Mereturn true bila Word.str ada dalam list aksivalid */
 
-void EvalAksi(Word X,Attribute *A);
+void EvalAksi(Word *X,Attribute *A, char c[MaxAksi][50]);
 /* Mengeval apakah aksi valid, bila tidak PesanError() dan mengulangi pemasukan aksi
 bila iya dan attribute mencukupi , mengubah atribut */
 

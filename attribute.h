@@ -45,7 +45,7 @@ semua atribut bernilai 15.*/
 
 /* Operator Menambahkan/ mengurangi attribut
    Attribute harus valid, bila tidak gunakan pesanerror*/
-void ChangesHygiene(Atr i,Attribute *A);
+void ChangeHygiene(Atr i,Attribute *A);
 /* Menambahkan Hygiene sebesar i*/
 
 void ChangeEnergy(Atr i,Attribute *A);
