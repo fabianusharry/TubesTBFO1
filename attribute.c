@@ -60,8 +60,8 @@ semua atribut bernilai 15.*/
 /* Operator Menambahkan/ mengurangi attribut
    Attribute harus valid, bila tidak gunakan pesanerror*/
 void ChangeHygiene(Atr i,Attribute *A){
-    if(IsAtrValid(Hygiene(A) + i)){
-        Hygiene(A) += i
+    if(IsAtrValid(Hygiene(*A) + i)){
+        Hygiene(*A) += i;
     }
     else{
         PesanError();
@@ -70,8 +70,8 @@ void ChangeHygiene(Atr i,Attribute *A){
 /* Mengubahs Hygiene sebesar i*/
 
 void ChangeEnergy(Atr i,Attribute *A){
-    if(IsAtrValid(Energy(A) + i)){
-        Energy(A) += i
+    if(IsAtrValid(Energy(*A) + i)){
+        Energy(*A) += i;
     }
     else{
         PesanError();
@@ -80,8 +80,8 @@ void ChangeEnergy(Atr i,Attribute *A){
 /* Mengubah Energy sebesar i*/
 
 void ChangeFun(Atr i,Attribute *A){
-    if(IsAtrValid(Hygiene(A) + i)){
-        Hygiene(A) += i
+    if(IsAtrValid(Fun(*A) + i)){
+        Fun(*A) += i;
     }
     else{
         PesanError();
@@ -91,7 +91,7 @@ void ChangeFun(Atr i,Attribute *A){
 
 /* Operator End Game */
 boolean IsGameOver(Attribute A){
-    if((Hygiene(A) == 15 && Energy(A) == 15 && Fun(A) == 15) || (Hygiene(A) == 0 && Energy(A) == 0 && Fun(A) == 0))
+    if((Hygiene(A) == 15 && Energy(A) == 15 && Fun(A) == 15) || (Hygiene(A) == 0 && Energy(A) == 0 && Fun(A) == 0));
 }
 /* Mereturn true bila semua atribut 15 atau 0 */
 
