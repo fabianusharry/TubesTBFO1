@@ -27,7 +27,7 @@ typedef struct {
 
 /* *** KONSTRUKTOR *** */
 boolean IsAtrValid(Atr i){
-    return((i >= 0) && (i<=15));
+    return((i >= AttMin) && (i<= AttMax));
 }
 /* Mengecek apakah i >=0 dan <=15 */
 
@@ -59,7 +59,7 @@ semua atribut bernilai 15.*/
 
 /* Operator Menambahkan/ mengurangi attribut
    Attribute harus valid, bila tidak gunakan pesanerror*/
-void AddHygiene(Atr i,Attribute *A){
+void ChangeHygiene(Atr i,Attribute *A){
     if(IsAtrValid(Hygiene(A) + i)){
         Hygiene(A) += i
     }
@@ -67,9 +67,9 @@ void AddHygiene(Atr i,Attribute *A){
         PesanError();
     }
 }
-/* Menambahkan Hygiene sebesar i*/
+/* Mengubahs Hygiene sebesar i*/
 
-void AddEnergy(Atr i,Attribute *A){
+void ChangeEnergy(Atr i,Attribute *A){
     if(IsAtrValid(Energy(A) + i)){
         Energy(A) += i
     }
@@ -77,9 +77,9 @@ void AddEnergy(Atr i,Attribute *A){
         PesanError();
     }
 }
-/* Menambahkan Energy sebesar i*/
+/* Mengubah Energy sebesar i*/
 
-void AddFun(Atr i,Attribute *A){
+void ChangeFun(Atr i,Attribute *A){
     if(IsAtrValid(Hygiene(A) + i)){
         Hygiene(A) += i
     }
@@ -87,16 +87,7 @@ void AddFun(Atr i,Attribute *A){
         PesanError();
     }
 }
-/* Menambahkan Fun sebesar i*/
-
-void RedHygiene(Atr i,Attribute *A);
-/* Mengurangi Fun sebanyak i*/
-
-void RedEnergy(Atr i,Attribute *A);
-/* Mengurangi Fun sebanyak i*/
-
-void RedFun(Atr i,Attribute *A);
-/* Mengurangi Fun sebanyak i*/
+/* Mengubah Fun sebesar i*/
 
 /* Operator End Game */
 boolean IsGameOver(Attribute A){
