@@ -49,9 +49,14 @@ def printattribute():
     print("Energy : " + str(Energy))
     print("Fun : " + str(Fun))
 
+#Prosedur untuk mencetak atribut saat ini di layat
+
 def pesanerror():
+    print()
     print("Aksi tidak valid!")
     printattribute()
+
+#Prosedur untuk mencetak apabila atribut melebihi batas nilai minimum atau maksimum
 
 def deskripsiaksi():
     print()
@@ -69,15 +74,21 @@ def deskripsiaksi():
     print("11. Membaca")
     print("Kamu mau ngapain?")
 
+#Prosedur mencetak list aksi yang bisa dilakukan
+
 def deskripsitidur():
     global perintah
+    print()
     print("Mau Tidur apa nih?")
     print("1. Tidur Siang")
     print("2. Tidur Malam")
     perintah = input("> ")
 
+#Prosedur untuk mencetak opsi tidur yang bisa dilakukan dan menerima input dari pemain
+
 def deskripsimakan():
     global perintah
+    print()
     print("Mau Makan Apa Nih?")
     print("[< MENU MAKANAN >]")
     print("1. Hamburger")
@@ -85,8 +96,11 @@ def deskripsimakan():
     print("3. Steak and Beans")
     perintah = input("> ")
 
+#Prosedur untuk mencetak opsi makanan apa yang bisa dimakan dan menerima input dari pemain
+
 def deskripsiminum():
     global perintah
+    print()
     print("Mau Minum Apa Nih?")
     print("[< MENU MINUMAN >]")
     print("1. Air")
@@ -94,8 +108,11 @@ def deskripsiminum():
     print("3. Jus")
     perintah = input("> ")
 
+#
+
 def deskripsibuangair():
     global perintah
+    print()
     print("Mau Kencing apa Berak??")
     print("1. Kencing")
     print("2. Berak")
@@ -103,6 +120,7 @@ def deskripsibuangair():
 
 def deskripsimembaca():
     global perintah
+    print()
     print("Mau Baca Apa Nih?")
     print("[< LIST BACAAN >]")
     print("1. Koran")
@@ -127,12 +145,13 @@ def startgame() :
     menang = False
     kalah = False
     printattribute()
+    print()
     print("Silahkan lakukan apapun yang kamu mau! Tapi ingat, tujuan kamu menang! Yaitu kalo kamu berhasil membuat semua atribut menjadi 15")
     print("Ingat!! Semua hal pasti ada konsekuensinya! Kamu juga bisa kalah kalo atribut kamu 0 semua!")
     print("Selamat Bermain!!")
 
     deskripsiaksi()
-    perintah = input("Masukkan aksi : ")
+    perintah = input("> ")
 
 # Fungsi digunakan saat game akan dimulai untuk mempersiapkan semua variabel sesuai dengan state awal game
 
@@ -330,14 +349,15 @@ while True:
     
     else: print("Aksi tidak terdaftar, hayo dibaca lagi!")
 
-    print()
     deskripsiaksi()
     perintah = input("Masukkan aksi : ")
 
 if(menang):
-    print("Selamat Anda berhasil menjadi pemenang!")
+    print("ALHAMDULILLAH IDUP MAKMUR EUY MENANGGGG IDUP AMAN TENTRAM ADIL MAKMUR")
 
 elif(kalah):
-    print("Yah belom beruntung :((((")
+    print("PEMAIN KAMU MATI WOI!! Belom beruntung :((((")
 
 print("Terima kasih sudah bermain The Sims Jadijadian ini hehe!! :)")
+
+#################### E N D   O F   P R O G R A M ######################
