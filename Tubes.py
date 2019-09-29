@@ -44,7 +44,9 @@ def ChangeFun(x):
 ############## FUNGSI TULIS #################
 
 def printattribute():
+    global nama
     print()
+    print("Status " + nama + " :")
     print("Hygiene : " + str(Hygiene))
     print("Energy : " + str(Energy))
     print("Fun : " + str(Fun))
@@ -55,6 +57,19 @@ def pesanerror():
     print()
     print("Aksi tidak valid!")
     printattribute()
+
+#Prosedur untuk mengganti attribute secara compact
+def ChangeAttribute(H,E,F):
+    global Hygiene
+    global Energy
+    global Fun
+    if(isInputValid(Hygiene+H,Energy+E,Fun+F)):
+        ChangeEnergy(E)
+        ChangeHygiene(H)
+        ChangeFun(F)
+        printattribute()
+    else:
+        pesanerror()
 
 #Prosedur untuk mencetak apabila atribut melebihi batas nilai minimum atau maksimum
 
@@ -72,6 +87,7 @@ def deskripsiaksi():
     print("9. Cuci Tangan")
     print("10. Mendengarkan Musik di Radio")
     print("11. Membaca")
+    print("12. Cek Attribute")
     print("Kamu mau ngapain?")
 
 #Prosedur mencetak list aksi yang bisa dilakukan
@@ -79,7 +95,7 @@ def deskripsiaksi():
 def deskripsitidur():
     global perintah
     print()
-    print("Mau Tidur apa nih?")
+    print("Mau tidur apa nih?")
     print("1. Tidur Siang")
     print("2. Tidur Malam")
     perintah = input("> ")
@@ -89,7 +105,7 @@ def deskripsitidur():
 def deskripsimakan():
     global perintah
     print()
-    print("Mau Makan Apa Nih?")
+    print("Mau makan apa nih?")
     print("[< MENU MAKANAN >]")
     print("1. Hamburger")
     print("2. Pizza")
@@ -101,19 +117,19 @@ def deskripsimakan():
 def deskripsiminum():
     global perintah
     print()
-    print("Mau Minum Apa Nih?")
+    print("Mau minum apa nih?")
     print("[< MENU MINUMAN >]")
     print("1. Air")
     print("2. Kopi")
     print("3. Jus")
     perintah = input("> ")
 
-#
+#Prosedur untuk mencetak opsi buang air pemain
 
 def deskripsibuangair():
     global perintah
     print()
-    print("Mau Kencing apa Berak??")
+    print("Mau Buang air kecil atau buang air besar??")
     print("1. Kencing")
     print("2. Berak")
     perintah = input("> ")
@@ -121,7 +137,7 @@ def deskripsibuangair():
 def deskripsimembaca():
     global perintah
     print()
-    print("Mau Baca Apa Nih?")
+    print("Mau baca apa nih?")
     print("[< LIST BACAAN >]")
     print("1. Koran")
     print("2. Novel")
@@ -135,6 +151,7 @@ def startgame() :
     global menang
     global kalah
     global perintah
+    global nama
 
     print("[[<<   THE SIMS JADIJADIAN   >>]]")
     nama = input("Masukkan Nama SIMS : ")
@@ -153,6 +170,21 @@ def startgame() :
     deskripsiaksi()
     perintah = input("> ")
 
+############ END STATE #################
+def EndGame():
+    global nama
+    if(menang):
+        print("ALHAMDULILLAH IDUP MAKMUR EUY MENANGGGG IDUP AMAN TENTRAM ADIL MAKMUR")
+        print("SELAMAT KEPADA PEMAIN " + nama + " KARENA TELAH MEMAINKAN GAME INI")
+
+    elif(kalah):
+        print("PEMAIN KAMU MATI WOI!! Belom beruntung :((((")
+    
+    print("Terima kasih sudah bermain The Sims Jadijadian ini hehe!! :)")
+
+def Cheat():
+    global menang
+    menang = True
 # Fungsi digunakan saat game akan dimulai untuk mempersiapkan semua variabel sesuai dengan state awal game
 
 ################################### ALGORITMA MAIN PROGRAM #################################
@@ -163,201 +195,83 @@ while True:
     if((perintah == "Tidur")):
         deskripsitidur()
 
-        if(perintah == "Tidur Siang"):
-            if(isInputValid(Hygiene, Energy + 10, Fun)):
-                ChangeEnergy(10)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+        if(perintah == "Siang"):
+            ChangeAttribute(0,10,0)
 
-        elif(perintah == "Tidur Malam"):
-            if(isInputValid(Hygiene, Energy + 15, Fun)):
-                ChangeEnergy(15)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+        elif(perintah == "Malam"):
+            ChangeAttribute(0,15,0)
 
     elif(perintah == "Makan"):
         deskripsimakan()
         if(perintah == "Hamburger"):
-            if(isInputValid(Hygiene, Energy + 5, Fun)):
-                ChangeEnergy(5)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(0,5,0)
 
         elif(perintah == "Pizza"):
-            if(isInputValid(Hygiene, Energy + 10, Fun)):
-                ChangeEnergy(10)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(0,10,0)
         
         elif(perintah == "Steak and Beans"):
-            if(isInputValid(Hygiene, Energy + 15, Fun)):
-                ChangeEnergy(15)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(0,15,0)
 
     elif(perintah == "Minum"):
         deskripsiminum()
 
         if(perintah == "Air"):
-            if(isInputValid(Hygiene - 5, Energy, Fun)):
-                ChangeHygiene(-5)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(-5,0,0)
 
         elif(perintah == "Kopi"):
-            if(isInputValid(Hygiene - 10, Energy + 5, Fun)):
-                ChangeEnergy(5)
-                ChangeHygiene(-10)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(-10,5,0)
         
         elif(perintah == "Jus"):
-            if(isInputValid(Hygiene - 5, Energy + 10, Fun)):
-                ChangeEnergy(10)
-                ChangeHygiene(-5)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(-5,10,0)
         
     elif(perintah == "Buang Air"):
         deskripsibuangair()
 
         if(perintah == "Kencing"):
-            if(isInputValid(Hygiene + 5, Energy, Fun)):
-                ChangeHygiene(5)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(5,0,0)
 
         elif(perintah == "Berak"):
-            if(isInputValid(Hygiene + 10, Energy - 5, Fun)):
-                ChangeEnergy(-5)
-                ChangeHygiene(10)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(10,-5,0)
     
-    elif(perintah == "Bersosialisasi Ke Kafe"):
-        if(isInputValid(Hygiene - 5, Energy - 10, Fun + 15)):
-            ChangeEnergy(-10)
-            ChangeHygiene(-5)
-            ChangeFun(15)
-            printattribute()
-            check()
-            if(menang or kalah) : break
-        else:
-            pesanerror()
+    elif(perintah == "Bersosialisasi ke Kafe"):
+        ChangeAttribute(-5,-10,15)
     
     elif(perintah == "Bermain Media Sosial"):
-        if(isInputValid(Hygiene, Energy - 10, Fun + 10)):
-            ChangeEnergy(-10)
-            ChangeFun(10)
-            printattribute()
-            check()
-            if(menang or kalah) : break
-        else:
-            pesanerror()
+        ChangeAttribute(0,-10,10)
     
     elif(perintah == "Bermain Komputer"):
-        if(isInputValid(Hygiene, Energy - 10, Fun + 15)):
-            ChangeEnergy(-10)
-            ChangeFun(15)
-            printattribute()
-            check()
-            if(menang or kalah) : break
-        else:
-            pesanerror()
+        ChangeAttribute(0,-10,15)
 
     elif(perintah == "Mandi"):
-        if(isInputValid(Hygiene + 15, Energy - 5, Fun)):
-            ChangeEnergy(-5)
-            ChangeHygiene(15)
-            printattribute()
-            check()
-            if(menang or kalah) : break
-        else:
-            pesanerror()
+        ChangeAttribute(15,-5,0)
     
     elif(perintah == "Cuci Tangan"):
-        if(isInputValid(Hygiene + 5, Energy, Fun)):
-            ChangeHygiene(5)
-            printattribute()
-            check()
-            if(menang or kalah) : break
-        else:
-            pesanerror()
+        ChangeAttribute(5,0,0)
     
     elif(perintah == "Mendengarkan Musik di Radio"):
-        if(isInputValid(Hygiene, Energy - 10, Fun + 10)):
-            ChangeEnergy(-10)
-            ChangeFun(10)
-            printattribute()
-            check()
-            if(menang or kalah) : break
-        else:
-            pesanerror()
+        ChangeAttribute(0,-10,10)
     
     elif((perintah == "Membaca")):
         deskripsimembaca()
 
         if(perintah == "Koran"):
-            if(isInputValid(Hygiene, Energy -5, Fun + 5)):
-                ChangeEnergy(-5)
-                ChangeFun(5)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(0,-5,5)
 
         elif(perintah == "Novel"):
-            if(isInputValid(Hygiene, Energy - 5, Fun + 10)):
-                ChangeEnergy(-5)
-                ChangeFun(10)
-                printattribute()
-                check()
-                if(menang or kalah) : break
-            else:
-                pesanerror()
+            ChangeAttribute(0,-5,10)
+
+    elif(perintah == "Cek Attribute"):
+        printattribute()
+    
+    elif(perintah == "HarryMario"):
+        Cheat()
     
     else: print("Aksi tidak terdaftar, hayo dibaca lagi!")
-
+    check()
+    if(menang or kalah) : break
     deskripsiaksi()
     perintah = input("Masukkan aksi : ")
 
-if(menang):
-    print("ALHAMDULILLAH IDUP MAKMUR EUY MENANGGGG IDUP AMAN TENTRAM ADIL MAKMUR")
-
-elif(kalah):
-    print("PEMAIN KAMU MATI WOI!! Belom beruntung :((((")
-
-print("Terima kasih sudah bermain The Sims Jadijadian ini hehe!! :)")
+EndGame()
 
 #################### E N D   O F   P R O G R A M ######################
