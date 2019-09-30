@@ -189,7 +189,7 @@ def deskripsimembaca():
     perintah2 = input("> ")
 
 ############ START STATE #################
-def startgame() : 
+def StartGame() : 
     global Hygiene
     global Energy
     global Fun
@@ -265,7 +265,7 @@ def Cheat():
 # Fungsi digunakan saat game akan dimulai untuk mempersiapkan semua variabel sesuai dengan state awal game
 
 ################################### ALGORITMA MAIN PROGRAM #################################
-startgame()
+StartGame()
 while True:
     checkperintah = True
     if((perintah == "Tidur")):
