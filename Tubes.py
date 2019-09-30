@@ -89,7 +89,7 @@ def printattribute():
     print("Energy : " + str(Energy))
     print("Fun : " + str(Fun))
 
-#Prosedur untuk mencetak atribut saat ini di layat
+#Prosedur untuk mencetak atribut saat ini di layar
 
 def pesanerror():
     global checkperintah
@@ -98,7 +98,7 @@ def pesanerror():
     checkperintah = False
     printattribute()
 
-#Prosedur untuk mengganti attribute secara compact
+
 def ChangeAttribute(H,E,F):
     global Hygiene
     global Energy
@@ -111,7 +111,7 @@ def ChangeAttribute(H,E,F):
     else:
         pesanerror()
 
-#Prosedur untuk mencetak apabila atribut melebihi batas nilai minimum atau maksimum
+#Prosedur untuk mengganti attribute secara compact
 
 def deskripsiaksi():
     global perintah2
@@ -238,6 +238,8 @@ def startgame() :
 def EndGame():
     global cekFile
     global nama
+    global terakhir
+    
     if(menang):
         print("ALHAMDULILLAH IDUP MAKMUR EUY MENANGGGG IDUP AMAN TENTRAM ADIL MAKMUR")
         print("SELAMAT KEPADA PEMAIN " + nama + " KARENA TELAH MEMAINKAN GAME INI")
