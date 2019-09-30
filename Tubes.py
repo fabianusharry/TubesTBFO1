@@ -49,6 +49,9 @@ def InputFile():
         print("Silakan memainkan game, file akan disave di " + fileName)
         cekFile = True
     
+    elif(isFile == "No") :
+        cekFile = False
+    
 def TulisKeFile(): # $ Fungsi untuk menuliskan aksi dan perubahan attribute kedalam file
     global fileName
     global csvData
@@ -138,8 +141,8 @@ def deskripsitidur():
     global perintah2
     print()
     print("Mau tidur apa nih?")
-    print("1. Tidur Siang")
-    print("2. Tidur Malam")
+    print("1. Siang")
+    print("2. Malam")
     perintah2 = input("> ")
 
 #Prosedur untuk mencetak opsi tidur yang bisa dilakukan dan menerima input dari pemain
@@ -239,7 +242,7 @@ def EndGame():
     global cekFile
     global nama
     global terakhir
-    
+
     if(menang):
         print("ALHAMDULILLAH IDUP MAKMUR EUY MENANGGGG IDUP AMAN TENTRAM ADIL MAKMUR")
         print("SELAMAT KEPADA PEMAIN " + nama + " KARENA TELAH MEMAINKAN GAME INI")
@@ -277,6 +280,7 @@ while True:
 
     elif(perintah == "Makan"):
         deskripsimakan()
+
         if(perintah2 == "Hamburger"):
             ChangeAttribute(0,5,0)
 
@@ -342,12 +346,13 @@ while True:
     elif(perintah == "Cek Attribute"):
         printattribute()
     
-    elif(perintah2 == "HarryMario"):
+    elif(perintah == "HarryMario"):
         Cheat()
     
     else: 
         print("Aksi tidak terdaftar, hayo dibaca lagi!")
         checkperintah = False
+
     check()
     if(checkperintah):
         AddAksi(perintah+" "+perintah2)
