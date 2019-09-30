@@ -337,7 +337,7 @@ while True:
 
         else : pesanerror()
 
-    elif(perintah2 == "Cek Attribute"):
+    elif(perintah == "Cek Attribute"):
         printattribute()
     
     elif(perintah2 == "HarryMario"):
