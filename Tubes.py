@@ -39,17 +39,17 @@ def InputFile():
     global fileName
     global cekFile
     isFile = input("Apakah kamu mau memasukan data game ini kedalam file? (Yes/No) : ")
-    while(isFile != "No" and isFile != "Yes"):
+    while(isFile.lower() != "no" and isFile.lower() != "yes"):
         isFile = input("Mohon ulangi pilihan anda (Yes/No) : ")
     
     nama = input("Masukkan Nama SIMS : ")
-    if (isFile == "Yes") :
+    if (isFile.lower() == "yes") :
         fileName = nama + ".csv"
         #fileName = input("Masukan nama file (gunakan .csv di akhir) : ")
         print("Silakan memainkan game, file akan disave di " + fileName)
         cekFile = True
     
-    elif(isFile == "No") :
+    elif(isFile.lower() == "no") :
         cekFile = False
     
 def TulisKeFile(): # $ Fungsi untuk menuliskan aksi dan perubahan attribute kedalam file
