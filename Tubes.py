@@ -244,8 +244,28 @@ def EndGame():
     global terakhir
 
     if(menang):
-        print("ALHAMDULILLAH IDUP MAKMUR EUY MENANGGGG IDUP AMAN TENTRAM ADIL MAKMUR")
-        print("SELAMAT KEPADA PEMAIN " + nama + " KARENA TELAH MEMAINKAN GAME INI")
+        print("            ``             ")
+        print("           os+            ")
+        print("        ./oo/`            ")
+        print("     `:+oooo:             ")
+        print("   `:ooooooo:             ALHAMDULILLAH IDUP MAKMUR EUY MENANGGGG IDUP AMAN TENTRAM ADIL MAKMUR")
+        print(" .:ooooooooo:             ")
+        print(" `..---:///+:             ")
+        print("            :             SELAMAT KEPADA PEMAIN " + nama + " KARENA TELAH MEMAINKAN GAME INI")
+        print("            :             ")
+        print("            :             JANGAN LUPA FOLLOW IG KAMI @fabianusharry")
+        print("            :                                        @mariogunawan1")
+        print("            :                .::           ")
+        print("            :                +-:/          ")
+        print("            :                :+-/+.        ")
+        print("            :                -o+--//- ``   ")
+        print("            :             -/-//+/---:shd:  ")
+        print("            :             .o///oo----+hy+  ")
+        print("            :              o////s+-//+hh.  ")
+        print("         ```/ `             /o//o/-:+ysd`  ")
+        print("         :hhdhh.             `..`.-.`:/-   ")
+        print("          yhhho                             ")
+        print()
 
     elif(kalah):
         print("PEMAIN KAMU MATI WOI!! Belom beruntung :((((")
